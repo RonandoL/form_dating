@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Dating Survey</title>
+  </head>
+
+<!-- name, favorite foods, music -->
+<!-- text, password, datetime, color, date, month, time, week, number, email, url, search, tel -->
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h2>The Dating Game Survey</h2>
+        <h4 class="well italic">Spill your guts and you'll soon be matched</h4>
+      </div>  <!-- /class="page-header" -->
+        <div class="row">
+          <div id="blanks" class="col-md-6">
+            <form>
+
+            <!-- Name -->
+              <div class="form-group">
+                <label for="name">What's Your Name?</label>
+                <input id="name" name="name" class="form-control" type="text" placeholder="Jo Blow">
+              </div>
+
+            <!-- Radio: M/F -->
+              <h4>Sex</h4>
+              <div class="radio">
+                <label>  <!-- doesn't need for= or ID tag! JQ grabs checked name= tag -->
+                  <input name="sex" value="male" type="radio">Male
+                </label>
+              </div>
+
+              <div class="radio">
+                <label>
+                  <input name="sex" value="female" type="radio">Female
+                </label>
+              </div>
+
+              <div class="radio">
+                <label>
+                  <input name="sex" value="yes" type="radio">Yes
+                </label>
+              </div>
+
+            <!-- Email -->
+              <div class="form-group">
+                <label for="email">What's Your Email?</label>
+                <input id="email" name="email" type="email" placeholder=" jo.blow@email.com">
+              </div>
+
+            <!-- URL -->
+              <div class="form-group">
+                <label for="url">What's Your URL?</label>
+                <input id="url" name="url" type="url" placeholder=" jo.blow.com">
+              </div>
+
+            <!-- Phone -->
+              <div class="form-group">
+                <label for="tel">What's Your Mobile #?</label>
+                <input id="tel" name="tel" type="tel" placeholder=" 555-555-5555">
+              </div>
+
+            <!-- Age -->
+              <div class="form-group">
+                <label for="age">What's Your Age?</label>
+                <input id="age" name="quantity" type="number" min="1" max="1000" placeholder=" 33">
+              </div>
+
+            <!-- Born: type="date"-->
+              <div class="form-group">
+                <label for="born">Birth Date?</label>
+                <input id="born" name="born" class="form-control" type="date">
+              </div>
+
+            <!-- Prison: type="month"-->
+              <div class="form-group">
+                <label for="prison">What month do you go back to prison?</label>
+                <input id="prison" name="prison" class="form-control" type="month">
+              </div>
+
+            <!-- School: type="week"-->
+              <div class="form-group">
+                <label for="school">What week does your school start?</label>
+                <input id="school" name="school" class="form-control" type="week">
+              </div>
+
+            <!-- Dinner: type="time"-->
+              <div class="form-group">
+                <label for="dinner">What time do you eat dinner?</label>
+                <input id="dinner" name="dinner" class="form-control" type="time">
+              </div>
+
+            <!-- Color -->
+              <!-- Creates a color control, for setting the element’s value to a hexadecimal color value. -->
+              <div class="form-group">
+                <h4>pick color from color wheel</h4>
+                <label>
+                  <input id="color" name="color" type="color" value="#ff0000"> Pick a color
+                </label>
+              </div>
+
+            <!-- Password -->
+              <div class="form-group">
+                <label for="password">Create A Password</label>
+                <input id="password" name="password" class="form-control" type="password" placeholder="shhh...it's a secret">
+              </div>
+
+            <!-- Radio: Car (Radio: use value="")-->
+              <h4>What's your favorite car?</h4>
+              <div class="radio">
+                <label>
+                  <input name="car" type="radio" value="camaro">Camaro
+                </label>
+              </div>
+
+              <div class="radio">
+                <label>
+                  <input name="car" type="radio" value="corvette">Corvette
+                </label>
+              </div>
+
+              <div class="radio">
+                <label>
+                  <input name="car" type="radio" value="ford_f150">Ford F-150
+                </label>
+              </div>
+
+              <div class="radio">
+                <label for="car">
+                  <input name="car" type="radio" value="cadillac">Cadillac
+                </label>
+              </div>
+
+            <!-- Food: Checkboxes (Checkboxes: no value="")-->
+              <!-- <h4>What's Your Favorite Type of Food?</h4>
+              <div class="checkbox">
+                <h5 class="italic grey">check all that apply</h5>
+                <label for="pizza">
+                  <input id="pizza" name="food" type="checkbox" value="">Pizza</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="chinese">
+                  <input id="chinese" name="food" type="checkbox" value="">Chinese</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="ihop">
+                  <input id="ihop" name="food" type="checkbox" value="">IHOP</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="steak">
+                  <input id="steak" name="food" type="checkbox" value="">Steak</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="vegetarian">
+                  <input id="vegetarian" name="food" type="checkbox" value="">Vegetarian</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="sushi">
+                  <input id="sushi" name="food" type="checkbox" value="">Sushi</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="eggs">
+                  <input id="eggs" name="food" type="checkbox" value="">Eggs n Stuff</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="burgers">
+                  <input id="burgers" name="food" type="checkbox" value="">Burgers</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="chicken">
+                  <input id="chicken" name="food" type="checkbox" value="">Fried Chicken</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="french_toast">
+                  <input id="french_toast" name="food" type="checkbox" value="">French Toast</label>
+              </div>
+
+              <div class="checkbox disabled">
+                <label for="airplane">
+                  <input id="airplane" name="food" type="checkbox" value="" disabled>Airplane</label>
+              </div>
+
+              <div class="checkbox disabled">
+                <label for="prison">
+                  <input id="prison" name="food" type="checkbox" value="" disabled>Prison</label>
+              </div>
+
+              <div class="checkbox disabled">
+                <label for="cafeteria">
+                  <input id="cafeteria" name="food" type="checkbox" value="" disabled>Cafeteria</label>
+              </div>
+            -->
+            <!-- Blondes -->
+              <!-- <h4>Blondes, Bruenettes and/or Red Heads?</h4>
+              <h5 class="italic grey">check all that apply</h5>
+              <div class="checkbox">
+                <label for="blonde">
+                  <input id="blonde" name="hair_color" type="checkbox">Blonde</label>
+              </div>
+
+              <div class="checkbox">
+                <label for="brunette">
+                  <input id="brunette" name="hair_color" type="checkbox">Brunette</label>
+              </div> -->
+
+              <button class="btn btn-warning">Submit</button>
+            </form>
+
+          </div>  <!-- /id="blanks" -->
+        </div>  <!-- /row -->
+
+      <div class="row">
+        <hr>
+        <div id="results" class="box col-sm-6">
+          <h3>Confirm your dating info you just submitted so you don't look like a dork.</h3>
+          <p>Name: <span class="name"></span></p>
+          <p>Sex: <span class="sex"></span></p>
+          <p>Email: <span class="email"></span></p>
+          <p>URL: <span class="url"></span></p>
+          <p>Phone: <span class="tel"></span></p>
+          <p>Age: <span class="age"></span></p>
+          <p>DOB: <span class="born"></span></p>
+          <p>Prison Month: <span class="prison"></span></p>
+          <p>Week School Starts: <span class="school"></span></p>
+          <p>Dinner Time: <span class="dinner"></span></p>
+          <p>Favorite Color: hexcolor <span class="color"></span></p>
+          <p>Password: <span class="password light_grey"></span></p>
+          <p>Favorite Car: <span class="car"></span></p>
+          <p>Favorite Food: <span class="food"></span></p>
+        </div>
+      </div>  <!-- /row -->
+
+          </div>
+        </div>
+      </div>  <!-- /header -->
+    </div>  <!-- /kcontainer -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
