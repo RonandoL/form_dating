@@ -13,9 +13,28 @@ $(document).ready(function() {
     var colorInput = $("input#color").val();
     var passwordInput = $("input#password").val();
     var carInput = $("input[name=car]:checked").val();
+      // Need to  use the .toString() function to convert the array to a string.
+    var foodInput = [];
+    var count = 0;
+      $.each($("input[name='food']"), function() {
+    	  if ($(this).is(':checked')) {
+    	    foodInput[count] = $(this).val();
+          count++;
+    	  }
+    	});
+    // var hair_colorInput = [];
+    // var counter = 0;
+    //   $.each($("input[name='hair_color']"), function() {
+    //     if($(this).is(':checked')) {
+    //       foodInput[counter] =  $(this).val();
+    //       counter++;
+    //     }
+    //   });
+
 
 // The :checked selector works for checkboxes, radio buttons, and select elements. For select elements only, use the :selected selector.
-
+    // $(".hair_color").text(hair_colorInput.toString());
+    $(".food").text(foodInput.toString());
     $(".car").text(carInput);
     $(".password").text(passwordInput);
     $(".color").text(colorInput);
